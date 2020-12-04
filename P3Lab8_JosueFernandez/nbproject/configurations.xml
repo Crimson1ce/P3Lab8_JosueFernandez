@@ -5,7 +5,10 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Partida.h</itemPath>
+      <itemPath>Peon.h</itemPath>
       <itemPath>Pieza.h</itemPath>
+      <itemPath>PosicionFueraDeRango.h</itemPath>
+      <itemPath>Rey.h</itemPath>
       <itemPath>Tablero.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -16,7 +19,10 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Partida.cpp</itemPath>
+      <itemPath>Peon.cpp</itemPath>
       <itemPath>Pieza.cpp</itemPath>
+      <itemPath>PiezaNula.cpp</itemPath>
+      <itemPath>Rey.cpp</itemPath>
       <itemPath>Tablero.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -46,9 +52,21 @@
       </item>
       <item path="Partida.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Peon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Peon.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Pieza.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Pieza.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PiezaNula.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PosicionFueraDeRango.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Rey.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Rey.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tablero.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -81,9 +99,21 @@
       </item>
       <item path="Partida.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Peon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Peon.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Pieza.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Pieza.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PiezaNula.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PosicionFueraDeRango.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Rey.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Rey.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tablero.cpp" ex="false" tool="1" flavor2="0">
       </item>

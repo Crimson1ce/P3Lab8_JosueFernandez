@@ -36,7 +36,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Partida.o \
+	${OBJECTDIR}/Peon.o \
 	${OBJECTDIR}/Pieza.o \
+	${OBJECTDIR}/PiezaNula.o \
+	${OBJECTDIR}/Rey.o \
 	${OBJECTDIR}/Tablero.o \
 	${OBJECTDIR}/main.o
 
@@ -70,10 +73,25 @@ ${OBJECTDIR}/Partida.o: Partida.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Partida.o Partida.cpp
 
+${OBJECTDIR}/Peon.o: Peon.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Peon.o Peon.cpp
+
 ${OBJECTDIR}/Pieza.o: Pieza.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Pieza.o Pieza.cpp
+
+${OBJECTDIR}/PiezaNula.o: PiezaNula.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PiezaNula.o PiezaNula.cpp
+
+${OBJECTDIR}/Rey.o: Rey.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Rey.o Rey.cpp
 
 ${OBJECTDIR}/Tablero.o: Tablero.cpp
 	${MKDIR} -p ${OBJECTDIR}

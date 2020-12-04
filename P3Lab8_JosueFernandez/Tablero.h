@@ -11,19 +11,32 @@
 class Tablero {
 public:
     //Constructor
-    Tablero();
+    Tablero(int);
     //Constructor de copia
     Tablero(const Tablero& orig);
     //Destructor
     virtual ~Tablero();
     
     //Libera memoria
-    void liberarMemoria;
+    void liberarMemoria();
     //Crea un nuevo tablero
     char** crearTablero();
+    //Imprime el tablero actual
+    void imprimirTablero();
+    //Getter de la posicion del tablero
+    char getCharCasilla(int,int);
+    //Retorna si la casilla está siendo atacada por el contrario
+    bool esAtacada(int,int,bool);
     
 private:
-    char** tablero;
+    Pieza** tablero;
+    int size;
+    
+    Rey reyBlanco;
+    Rey reyNegro;
+    Pieza piezaBlanca;
+    Pieza piezaNegra;
+    
 };
 
 #endif /* TABLERO_H */

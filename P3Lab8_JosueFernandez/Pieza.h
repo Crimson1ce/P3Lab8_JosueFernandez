@@ -11,20 +11,28 @@
 #include <string>
 using std::string;
 
+class Tablero;
+
 class Pieza {
 public:
     //Constructor
-    Pieza();
+    Pieza(bool,int,int);
     //Constructor de copia
     Pieza(const Pieza& orig);
     //Destructor
     virtual ~Pieza();
     
-    //Método virtual puro para validar el movimiento de las piezas
-    bool validarMovimiento(string) = 0;
+    //Método para validar el movimiento de las piezas
+    virtual bool validarMovimiento(string,Tablero);
     
-private:
-
+protected:
+    int filaActual;
+    int columnaActual;
+    bool esBlanca;
+    char caracter;
+    
+    friend class Tablero;
+    
 };
 
 #endif /* PIEZA_H */
