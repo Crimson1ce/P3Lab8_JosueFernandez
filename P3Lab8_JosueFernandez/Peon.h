@@ -8,6 +8,11 @@
 #ifndef PEON_H
 #define PEON_H
 
+#include "Pieza.h"
+#include "Tablero.h"
+#include <string>
+using std::string;
+
 class Peon : public Pieza{
 public:
     //Constructor
@@ -17,7 +22,7 @@ public:
     //Destructor
     virtual ~Peon();
     
-    //Método para validar el movimiento del rey
+    //Método para validar el movimiento del peón
     bool validarMovimiento(string,Tablero);
     
 private:

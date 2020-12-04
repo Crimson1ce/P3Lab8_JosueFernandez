@@ -7,6 +7,9 @@
 
 #include "Rey.h"
 #include "Pieza.h"
+#include "Tablero.h"
+#include <string>
+using std::string;
 
 Rey::Rey(bool esBlanco) : Pieza(esBlanco, (esBlanco ? 7 : 0), 4), estaEnJaque(false) {
     if (esBlanco) {

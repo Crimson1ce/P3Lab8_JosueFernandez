@@ -9,6 +9,9 @@
 #define REY_H
 
 #include "Pieza.h"
+#include "Tablero.h"
+#include <string>
+using std::string;
 
 class Rey : public Pieza {
 public:

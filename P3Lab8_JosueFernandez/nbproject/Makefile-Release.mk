@@ -35,12 +35,15 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Alfil.o \
 	${OBJECTDIR}/Partida.o \
 	${OBJECTDIR}/Peon.o \
 	${OBJECTDIR}/Pieza.o \
 	${OBJECTDIR}/PiezaNula.o \
+	${OBJECTDIR}/Reina.o \
 	${OBJECTDIR}/Rey.o \
 	${OBJECTDIR}/Tablero.o \
+	${OBJECTDIR}/Torre.o \
 	${OBJECTDIR}/main.o
 
 
@@ -68,6 +71,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/p3lab8_josuefernandez.exe: ${OBJECTFI
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/p3lab8_josuefernandez ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Alfil.o: Alfil.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Alfil.o Alfil.cpp
+
 ${OBJECTDIR}/Partida.o: Partida.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -88,6 +96,11 @@ ${OBJECTDIR}/PiezaNula.o: PiezaNula.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PiezaNula.o PiezaNula.cpp
 
+${OBJECTDIR}/Reina.o: Reina.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Reina.o Reina.cpp
+
 ${OBJECTDIR}/Rey.o: Rey.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -97,6 +110,11 @@ ${OBJECTDIR}/Tablero.o: Tablero.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Tablero.o Tablero.cpp
+
+${OBJECTDIR}/Torre.o: Torre.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Torre.o Torre.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

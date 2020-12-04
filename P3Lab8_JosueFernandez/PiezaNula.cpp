@@ -7,6 +7,9 @@
 
 #include "PiezaNula.h"
 #include "Pieza.h"
+#include "Tablero.h"
+#include <string>
+using std::string;
 
 PiezaNula::PiezaNula() : Pieza() {
     caracter = ' ';

@@ -1,32 +1,32 @@
 /* 
- * File:   Peon.cpp
+ * File:   Alfil.cpp
  * Author: Josue_Fernandez
  * 
  * Created on 04 de diciembre de 2020
  */
 
-#include "Peon.h"
+#include "Alfil.h"
 #include "Pieza.h"
 #include "Tablero.h"
 #include <string>
 using std::string;
 
-Peon::Peon(bool esBlanco) : Pieza(esBlanco, (esBlanco ? 6 : 1), 4) {
+Alfil::Alfil(bool esBlanco) : Pieza(esBlanco, (esBlanco ? 7 : 0), (esBlanco ? 2 : 5)) {
     if (esBlanco) {
-        caracter = 'P';
+        caracter = 'A';
     } else {
-        caracter = 'p';
+        caracter = 'a';
     }
 }
 
-Peon::Peon(const Peon& orig) {
+Alfil::Alfil(const Alfil& orig) {
 }
 
-Peon::~Peon() {
+Alfil::~Alfil() {
 }
 
-bool Peon::validarMovimiento(string coordenadas, Tablero tablero) {
-
+bool Alfil::validarMovimiento(string coordenadas, Tablero tablero) {
+    
     if (!Pieza::validarMovimiento(coordenadas, tablero)) {
         return false;
     }
@@ -56,19 +56,13 @@ bool Peon::validarMovimiento(string coordenadas, Tablero tablero) {
         columna -= 97;
     }
 
-    if (fila != filaActual - (esBlanca ? 1 : -1)) {
+    //Movimiento alfil
+    int difHorizontal = fila - filaActual;
+    int difVertical = columna - columnaActual;
+    if (difHorizontal != difVertical && difHorizontal != -difVertical) {
         return false;
     }
-
-
-    if (columna - columnaActual >= -1 && columna - columnaActual <= 1) {
-        if (columna != columnaActual) {
-            int valor = (int) tablero.getCharCasilla(fila, columna);
-            if (valor == ' ') { //Si una casilla diagonal
-                return false;
-            }
-        }
-    }
-
+    
     return true;
+    
 }

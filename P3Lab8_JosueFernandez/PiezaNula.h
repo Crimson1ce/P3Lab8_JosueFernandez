@@ -1,18 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   PosicionFueraDeRango.h
- * Author: IT
+ * Author: Josue_Fernandez
  *
- * Created on 04 de diciembre de 2020, 03:02 PM
+ * Created on 04 de diciembre de 2020
  */
 
 #ifndef PIEZANULA_H
 #define PIEZANULA_H
+
+#include "Pieza.h"
+#include "Tablero.h"
+#include <string>
+using std::string;
 
 class PiezaNula : public Pieza {
 public:

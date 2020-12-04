@@ -1,32 +1,31 @@
 /* 
- * File:   Peon.cpp
+ * File:   Reina.cpp
  * Author: Josue_Fernandez
  * 
  * Created on 04 de diciembre de 2020
  */
 
-#include "Peon.h"
+#include "Reina.h"
 #include "Pieza.h"
 #include "Tablero.h"
 #include <string>
 using std::string;
 
-Peon::Peon(bool esBlanco) : Pieza(esBlanco, (esBlanco ? 6 : 1), 4) {
-    if (esBlanco) {
-        caracter = 'P';
+Reina::Reina(bool esBlanca) : Pieza(esBlanca, (esBlanca ? 7 : 0), 3) {
+    if (esBlanca) {
+        caracter = 'Q';
     } else {
-        caracter = 'p';
+        caracter = 'q';
     }
 }
 
-Peon::Peon(const Peon& orig) {
+Reina::Reina(const Reina& orig) {
 }
 
-Peon::~Peon() {
+Reina::~Reina() {
 }
 
-bool Peon::validarMovimiento(string coordenadas, Tablero tablero) {
-
+bool Reina::validarMovimiento(string coordenadas, Tablero tablero) {
     if (!Pieza::validarMovimiento(coordenadas, tablero)) {
         return false;
     }
@@ -56,17 +55,13 @@ bool Peon::validarMovimiento(string coordenadas, Tablero tablero) {
         columna -= 97;
     }
 
-    if (fila != filaActual - (esBlanca ? 1 : -1)) {
-        return false;
-    }
-
-
-    if (columna - columnaActual >= -1 && columna - columnaActual <= 1) {
-        if (columna != columnaActual) {
-            int valor = (int) tablero.getCharCasilla(fila, columna);
-            if (valor == ' ') { //Si una casilla diagonal
-                return false;
-            }
+    //Movimiento tipo torre
+    int difHorizontal = fila - filaActual;
+    int difVertical = columna - columnaActual;
+    if (difHorizontal != 0 && difVertical != 0) {
+        //Movimiento alfil
+        if (difHorizontal != difVertical && difHorizontal != -difVertical) {
+            return false;
         }
     }
 
