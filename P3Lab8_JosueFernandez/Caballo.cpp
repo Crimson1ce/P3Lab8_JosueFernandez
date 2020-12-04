@@ -29,7 +29,7 @@ int Caballo::absoluto(int numero) {
     return (numero > 0 ? numero : -numero);
 }
 
-bool Caballo::validarMovimiento(string, Tablero) {
+bool Caballo::validarMovimiento(string coordenadas, Tablero tablero) {
     if (!Pieza::validarMovimiento(coordenadas, tablero)) {
         return false;
     }
