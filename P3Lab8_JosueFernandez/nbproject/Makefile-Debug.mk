@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Alfil.o \
+	${OBJECTDIR}/Caballo.o \
 	${OBJECTDIR}/Partida.o \
 	${OBJECTDIR}/Peon.o \
 	${OBJECTDIR}/Pieza.o \
@@ -75,6 +76,11 @@ ${OBJECTDIR}/Alfil.o: Alfil.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Alfil.o Alfil.cpp
+
+${OBJECTDIR}/Caballo.o: Caballo.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Caballo.o Caballo.cpp
 
 ${OBJECTDIR}/Partida.o: Partida.cpp
 	${MKDIR} -p ${OBJECTDIR}
