@@ -32,9 +32,9 @@ bool Rey::validarMovimiento(string coordenadas, Tablero tablero) {
     }
     
     // El ingreso es de 1 a 8, pero la matriz está al revés de 0 a 7
-    int fila = (int) string[5];
+    int fila = (int) coordenadas[5];
     //Columna se representa por un caracter
-    int columna = (int) string[4];
+    int columna = (int) coordenadas[4];
 
     //Validacion fila
     if(fila < 49 || fila > 56){ 
@@ -60,16 +60,14 @@ bool Rey::validarMovimiento(string coordenadas, Tablero tablero) {
         return false;
     }
     
-    /*
-    //Ya tenemos la fila y columna
-    if( fila - filaActual >= -1 && fila - filaActual <= 1 
-        && columna - columnaActual >= -1 && columna - columnaActual <= 1 ){
-        
-        filaActual = fila;
-        columnaActual = columna;
-    }
-     */
 
+    setNextFila(fila);
+    setNextColumna(columna);
+    
     //Entonces sí se puede realizar e movimiento
     return true;
+}
+
+Rey::Rey() : Pieza() {
+
 }

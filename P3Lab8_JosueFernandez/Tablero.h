@@ -8,8 +8,15 @@
 #ifndef TABLERO_H
 #define TABLERO_H
 
+#include "Pieza.h"
+#include "Rey.h"
+
+
+class Partida;
+
 class Tablero {
 public:
+    Tablero();
     //Constructor
     Tablero(int);
     //Constructor de copia
@@ -20,7 +27,7 @@ public:
     //Libera memoria
     void liberarMemoria();
     //Crea un nuevo tablero
-    char** crearTablero();
+    Pieza** crearTablero();
     //Imprime el tablero actual
     void imprimirTablero();
     //Getter de la posicion del tablero
@@ -29,13 +36,14 @@ public:
     bool esAtacada(int,int,bool);
     
 private:
-    Pieza** tablero;
+    Pieza** tablero = NULL;
     int size;
+    Pieza * reyBlanco = NULL; 
+    Pieza * reyNegro = NULL; 
+    Pieza * piezaBlanca = NULL;
+    Pieza *  piezaNegra = NULL;
     
-    Rey reyBlanco;
-    Rey reyNegro;
-    Pieza piezaBlanca;
-    Pieza piezaNegra;
+    friend class Partida;
     
 };
 

@@ -5,15 +5,20 @@
  * Created on 04 de diciembre de 2020
  */
 
-#include "Tablero.h"
+#include "Tablero.h" 
 #include "Rey.h"
+#include "Reina.h"
+#include "Peon.h"
+#include "Torre.h"
+#include "Alfil.h"
+#include "Caballo.h"
 #include "PiezaNula.h"
 
 #include <iostream>
 using std::cout;
 using std::endl;
 
-Tablero::Tablero(int pieza) : size(8) {
+Tablero::Tablero(int pieza) {
     
     //Torre
     //Caballo
@@ -21,20 +26,37 @@ Tablero::Tablero(int pieza) : size(8) {
     //Reina
     //Peón
     
-    reyBlanco = Rey(true);
-    reyNegro = Rey(false);
+    size = 8;
+    
+    reyBlanco = new Rey(true);
+    reyNegro = new Rey(false);
+    
+    tablero = crearTablero();
     
     switch(pieza){
         case 1: //Torre
-            
+            piezaBlanca = new Torre(true);
+            piezaNegra = new Torre(false);
             break;
         case 2:
+            piezaBlanca = new Caballo(true);
+            piezaNegra = new Caballo(false);
             break;
         case 3:
+            piezaBlanca = new Alfil(true);
+            piezaNegra = new Alfil(false);
             break;
         case 4:
+            piezaBlanca = new Reina(true);
+            piezaNegra = new Reina(false);
             break;
         case 5:
+            piezaBlanca = new Peon(true);
+            piezaNegra = new Peon(false);
+            break;
+        default:
+            piezaBlanca = new Peon(true);
+            piezaNegra = new Peon(false);
             break;
     }
     
@@ -56,9 +78,13 @@ Tablero::Tablero(const Tablero& orig) {
 
 Tablero::~Tablero() {
     liberarMemoria();
+    delete reyBlanco;
+    delete reyNegro;
+    delete piezaBlanca;
+    delete piezaNegra;
 }
 
-char** Tablero::crearTablero() {
+Pieza** Tablero::crearTablero() {
     
     if(tablero != NULL){
         liberarMemoria();
@@ -86,7 +112,7 @@ void Tablero::imprimirTablero() {
         cout << "+---+---+---+---+---+---+---+---+\n";
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                cout << "| " << ( tablero[i][j] == NULL ? ' ' : tablero[i][j].caracter) << " ";
+                cout << "| " <<  tablero[i][j].caracter << " "; 
             }
             cout <<"|\n";
             cout << "+---+---+---+---+---+---+---+---+\n";
@@ -119,21 +145,25 @@ bool Tablero::esAtacada(int fila, int columna, bool esBlanca) {
     if(esBlanca){ //La pieza atacada es blanca
         
         //Vamos a verificar el movimiento para las piezas negras
-        if (piezaNegra.validarMovimiento(coordenadas,this)){
+        if (piezaNegra->validarMovimiento(coordenadas,(*this))){
             return true;
-        } else if (reyNegro.validarMovimiento(coordenadas,this)) {
-            
+        } else if (reyNegro->validarMovimiento(coordenadas,(*this))) {
+            return true;
         }
         
     } else { //La pieza atacada es negra
         
         //Vamos a verificar el movimiento para las piezas blancas
-        if (piezaBlanca.validarMovimiento(coordenadas,this)){
+        if (piezaBlanca->validarMovimiento(coordenadas,(*this))){
             return true;
-        } else if (reyBlanco.validarMovimiento(coordenadas,this)) {
-            
+        } else if (reyBlanco->validarMovimiento(coordenadas,(*this))) {
+            return true;
         }
         
     }
-    
+    return false;
+}
+
+Tablero::Tablero() {
+
 }

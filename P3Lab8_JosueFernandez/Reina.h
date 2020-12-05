@@ -17,6 +17,7 @@ using std::string;
 
 class Reina : public Pieza {
 public:
+    Reina();
     //Constructor
     Reina(bool);
     Reina(const Reina& orig);

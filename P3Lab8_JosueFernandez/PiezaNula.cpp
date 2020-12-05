@@ -11,7 +11,7 @@
 #include <string>
 using std::string;
 
-PiezaNula::PiezaNula() : Pieza() {
+PiezaNula::PiezaNula() : Pieza(false,-1,-1) {
     caracter = ' ';
     filaActual = -1;
     columnaActual = -1;

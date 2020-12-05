@@ -15,6 +15,7 @@ using std::string;
 
 class Rey : public Pieza {
 public:
+    Rey();
     //Constructor
     Rey(bool);
     //Constructor de copia

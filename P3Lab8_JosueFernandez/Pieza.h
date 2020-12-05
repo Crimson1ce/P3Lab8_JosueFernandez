@@ -15,6 +15,7 @@ class Tablero;
 
 class Pieza {
 public:
+    Pieza();
     //Constructor
     Pieza(bool,int,int);
     //Constructor de copia
@@ -25,11 +26,23 @@ public:
     //Método para validar el movimiento de las piezas
     virtual bool validarMovimiento(string,Tablero);
     
+    char getCaracter();
+    bool isBlanca();
+    
+    int getNextFila();
+    int getNextColumna();
+    void setNextFila(int);
+    void setNextColumna(int);
+
+    
 protected:
     int filaActual;
     int columnaActual;
     bool esBlanca;
     char caracter;
+    
+    int nextFila;
+    int nextColumna;
     
     friend class Tablero;
     

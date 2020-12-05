@@ -15,6 +15,7 @@ using std::string;
 
 class Peon : public Pieza{
 public:
+    Peon();
     //Constructor
     Peon(bool);
     //Constructor de copia

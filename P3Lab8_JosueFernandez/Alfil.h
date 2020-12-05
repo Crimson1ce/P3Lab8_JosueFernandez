@@ -15,6 +15,7 @@ using std::string;
 
 class Alfil : public Pieza {
 public:
+    Alfil();
     //Constructor
     Alfil(bool);
     //Constructor de copia

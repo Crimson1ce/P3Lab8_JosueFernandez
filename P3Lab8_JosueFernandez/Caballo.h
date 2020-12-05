@@ -13,8 +13,9 @@
 #include <string>
 using std::string;
 
-class Caballo : Pieza{
+class Caballo : public Pieza{
 public:
+    Caballo();
     Caballo(bool);
     Caballo(const Caballo& orig);
     virtual ~Caballo();

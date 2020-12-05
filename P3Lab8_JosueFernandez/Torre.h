@@ -16,6 +16,7 @@ using std::string;
 
 class Torre : public Pieza {
 public:
+    Torre();
     Torre(bool);
     Torre(const Torre& orig);
     virtual ~Torre();
